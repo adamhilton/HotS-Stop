@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">android-kotlin-mvvm</string>
+    <string name="app_name">HotS Stop</string>
     <string name="get_data">Get data!</string>
 </resources>

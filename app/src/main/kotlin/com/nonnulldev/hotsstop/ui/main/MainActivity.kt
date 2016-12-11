@@ -42,7 +42,6 @@ class MainActivity : AppCompatActivity() {
         subscriptions.addAll(
                 viewModel.heroesObservable()
                         .observeOn(AndroidSchedulers.mainThread())
-                        .subscribeOn(Schedulers.io())
                         .subscribe { it -> showData(it) }
         )
     }
@@ -62,11 +61,11 @@ class MainActivity : AppCompatActivity() {
 
     @OnClick(R.id.get_data_button)
     fun getDataButtonClicked() {
-        subscriptions.add(
-            viewModel.loadHeroes().subscribe()
-        )
+        viewModel.loadHeroes()
+                .subscribeOn(Schedulers.io())
+                .subscribe()
     }
-    
+
     private fun showData(heroes: List<Hero>) {
         tvData.text = heroes.toString()
     }

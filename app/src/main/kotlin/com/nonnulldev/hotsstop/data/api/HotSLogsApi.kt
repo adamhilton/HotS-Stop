@@ -8,6 +8,4 @@ interface HotSLogsApi {
 
     @GET("/Public/Data/Heroes")
     fun getHeroes(): Observable<List<Hero>>
-
-
 }

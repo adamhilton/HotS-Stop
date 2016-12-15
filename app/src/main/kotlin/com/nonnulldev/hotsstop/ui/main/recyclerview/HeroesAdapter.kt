@@ -18,7 +18,10 @@ class HeroesAdapter(private val heroes: List<Hero>) : RecyclerView.Adapter<Heroe
     }
 
     override fun onBindViewHolder(holderHeroes: HeroesViewHolder, position: Int) {
-        holderHeroes.name.text = heroes[position].PrimaryName
+        val hero = heroes[position]
+        holderHeroes.name.text = hero.PrimaryName
+        holderHeroes.group.text = hero.Group
+        holderHeroes.subgroup.text = hero.SubGroup
     }
 
     override fun getItemCount(): Int {

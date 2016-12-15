@@ -15,6 +15,10 @@ class HeroesViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     @BindView(R.id.hero_name)
     lateinit internal var name: TextView
+    @BindView(R.id.hero_group)
+    lateinit internal var group: TextView
+    @BindView(R.id.hero_subgroup)
+    lateinit internal var subgroup: TextView
 
     init {
         ButterKnife.bind(this, itemView)
